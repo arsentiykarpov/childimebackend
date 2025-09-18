@@ -1,0 +1,10 @@
+#!/bin/bash
+
+input_file="$1"
+if [ -z "$input_file" ]; then
+  echo "Usage: $0 <input_file>"
+  exit 1
+fi
+curl -X POST http://localhost:8000/predict \
+     -H "Content-Type: application/json" \
+     -d @"${input_file}.json" | jq 
