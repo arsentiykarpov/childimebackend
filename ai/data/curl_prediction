@@ -7,4 +7,4 @@ if [ -z "$input_file" ]; then
 fi
 curl -X POST http://localhost:8000/predict \
      -H "Content-Type: application/json" \
-     -d @"${input_file}.json" | jq 
+     -d @"${input_file}" | jq 
